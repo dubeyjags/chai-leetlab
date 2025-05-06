@@ -72,6 +72,25 @@ npx prisma generate
 npx prisma migrate dev ( migrate the db)
 npx prisma db push
 
+## judge0
+- judge0 github
+- judge0.com > pricing > install > changelog
+    - deployment procedure
+        - powershell > wsl --install (open ubantu)
+        - username/jagdamba
+        - sudo apt update
+        - sudo apt upgrade -y
+        - sudo nano /etc/default/grub
+        - sudo apt install -y docker.io
+        - sudo apt install -y docker-compose
+        - sudo apt install git curl -y
+        - git clone https://github.com/judge0/judge0.git
+        - cd judge0
+        - nano judge0.conf (update redis and postgres password)
+        - docker-compose up -d  (or add sudo at begining)
+        - docker ps (to check the running server and port)
+
+
 ## now start the auth routes at index.js routes.js and controller.js
 npm i bcryptjs (for hashing password)
 npm i jsonwebtoken
