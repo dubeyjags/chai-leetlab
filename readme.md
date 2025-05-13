@@ -70,7 +70,7 @@ Also check for docker with command docker
     config db in .env
 npx prisma generate
 npx prisma migrate dev ( migrate the db)
-npx prisma db push
+npx prisma db push  
 
 ## judge0
 - judge0 github
