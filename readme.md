@@ -71,6 +71,7 @@ Also check for docker with command docker
 npx prisma generate
 npx prisma migrate dev ( migrate the db)
 npx prisma db push  
+npx prisma studio // to see the data with db
 
 ## judge0
 - judge0 github
