@@ -37,7 +37,7 @@ model User {
 
   prolems       Problem[]
   submissions   Submission[]
-  problemSolved problemSolved[]
+  problemSolved ProblemSolved[]
 }
 
 model Problem {
@@ -60,24 +60,24 @@ model Problem {
   //Relationship
   user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
   submissions Submission[]
-  solvedBy    problemSolved[]
+  solvedBy    ProblemSolved[]
 }
 
 model Submission {
-  id             String   @id @default(uuid())
-  problemId      String
-  userId         String
-  code           Json
-  language       String
-  stnin          String?
-  stdout         String?
-  stderr         String?
-  compile_output String?
-  status         String
-  memory         String?
-  time           String?
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  id            String   @id @default(uuid())
+  userId        String
+  problemId     String
+  sourceCode    Json
+  language      String
+  stdin         String?
+  stdout        String?
+  stderr        String?
+  compileOutput String?
+  status        String
+  memory        String?
+  time          String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
   //Relationship
   user     User             @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -106,7 +106,7 @@ model TestCaseResult {
   @@index([submissionId])
 }
 
-model problemSolved {
+model ProblemSolved {
   id        String   @id @default(uuid())
   userId    String
   problemId String

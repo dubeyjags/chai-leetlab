@@ -40,3 +40,12 @@ export const pollBatchResults = async (tokens) => {
     await sleep(1000); // wait for 1 second before polling again
   }
 };
+
+export function getLanguageName(languageId) {
+  const languageMap = {
+    71: "PYTHON",
+    62: "JAVA",
+    63: "JAVASCRIPT",
+  };
+  return languageMap[languageId] || "UNKNOWN";
+}
