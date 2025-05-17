@@ -1265,13 +1265,13 @@ export namespace Prisma {
   export type UserCountOutputType = {
     prolems: number
     submissions: number
-    solvedBy: number
+    problemSolved: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     prolems?: boolean | UserCountOutputTypeCountProlemsArgs
     submissions?: boolean | UserCountOutputTypeCountSubmissionsArgs
-    solvedBy?: boolean | UserCountOutputTypeCountSolvedByArgs
+    problemSolved?: boolean | UserCountOutputTypeCountProblemSolvedArgs
   }
 
   // Custom InputTypes
@@ -1302,7 +1302,7 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountSolvedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserCountOutputTypeCountProblemSolvedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: problemSolvedWhereInput
   }
 
@@ -1313,12 +1313,12 @@ export namespace Prisma {
 
   export type ProblemCountOutputType = {
     submissions: number
-    solvedproblems: number
+    solvedBy: number
   }
 
   export type ProblemCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     submissions?: boolean | ProblemCountOutputTypeCountSubmissionsArgs
-    solvedproblems?: boolean | ProblemCountOutputTypeCountSolvedproblemsArgs
+    solvedBy?: boolean | ProblemCountOutputTypeCountSolvedByArgs
   }
 
   // Custom InputTypes
@@ -1342,7 +1342,7 @@ export namespace Prisma {
   /**
    * ProblemCountOutputType without action
    */
-  export type ProblemCountOutputTypeCountSolvedproblemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProblemCountOutputTypeCountSolvedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: problemSolvedWhereInput
   }
 
@@ -1572,7 +1572,7 @@ export namespace Prisma {
     updatedAt?: boolean
     prolems?: boolean | User$prolemsArgs<ExtArgs>
     submissions?: boolean | User$submissionsArgs<ExtArgs>
-    solvedBy?: boolean | User$solvedByArgs<ExtArgs>
+    problemSolved?: boolean | User$problemSolvedArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -1613,7 +1613,7 @@ export namespace Prisma {
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     prolems?: boolean | User$prolemsArgs<ExtArgs>
     submissions?: boolean | User$submissionsArgs<ExtArgs>
-    solvedBy?: boolean | User$solvedByArgs<ExtArgs>
+    problemSolved?: boolean | User$problemSolvedArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1624,7 +1624,7 @@ export namespace Prisma {
     objects: {
       prolems: Prisma.$ProblemPayload<ExtArgs>[]
       submissions: Prisma.$SubmissionPayload<ExtArgs>[]
-      solvedBy: Prisma.$problemSolvedPayload<ExtArgs>[]
+      problemSolved: Prisma.$problemSolvedPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -2031,7 +2031,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     prolems<T extends User$prolemsArgs<ExtArgs> = {}>(args?: Subset<T, User$prolemsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProblemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     submissions<T extends User$submissionsArgs<ExtArgs> = {}>(args?: Subset<T, User$submissionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubmissionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    solvedBy<T extends User$solvedByArgs<ExtArgs> = {}>(args?: Subset<T, User$solvedByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$problemSolvedPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    problemSolved<T extends User$problemSolvedArgs<ExtArgs> = {}>(args?: Subset<T, User$problemSolvedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$problemSolvedPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2505,9 +2505,9 @@ export namespace Prisma {
   }
 
   /**
-   * User.solvedBy
+   * User.problemSolved
    */
-  export type User$solvedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$problemSolvedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the problemSolved
      */
@@ -2773,7 +2773,7 @@ export namespace Prisma {
     updatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     submissions?: boolean | Problem$submissionsArgs<ExtArgs>
-    solvedproblems?: boolean | Problem$solvedproblemsArgs<ExtArgs>
+    solvedBy?: boolean | Problem$solvedByArgs<ExtArgs>
     _count?: boolean | ProblemCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["problem"]>
 
@@ -2837,7 +2837,7 @@ export namespace Prisma {
   export type ProblemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     submissions?: boolean | Problem$submissionsArgs<ExtArgs>
-    solvedproblems?: boolean | Problem$solvedproblemsArgs<ExtArgs>
+    solvedBy?: boolean | Problem$solvedByArgs<ExtArgs>
     _count?: boolean | ProblemCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ProblemIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2852,7 +2852,7 @@ export namespace Prisma {
     objects: {
       user: Prisma.$UserPayload<ExtArgs>
       submissions: Prisma.$SubmissionPayload<ExtArgs>[]
-      solvedproblems: Prisma.$problemSolvedPayload<ExtArgs>[]
+      solvedBy: Prisma.$problemSolvedPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -3266,7 +3266,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     submissions<T extends Problem$submissionsArgs<ExtArgs> = {}>(args?: Subset<T, Problem$submissionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubmissionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    solvedproblems<T extends Problem$solvedproblemsArgs<ExtArgs> = {}>(args?: Subset<T, Problem$solvedproblemsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$problemSolvedPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    solvedBy<T extends Problem$solvedByArgs<ExtArgs> = {}>(args?: Subset<T, Problem$solvedByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$problemSolvedPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3731,9 +3731,9 @@ export namespace Prisma {
   }
 
   /**
-   * Problem.solvedproblems
+   * Problem.solvedBy
    */
-  export type Problem$solvedproblemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Problem$solvedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the problemSolved
      */
@@ -7510,7 +7510,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"User"> | Date | string
     prolems?: ProblemListRelationFilter
     submissions?: SubmissionListRelationFilter
-    solvedBy?: ProblemSolvedListRelationFilter
+    problemSolved?: ProblemSolvedListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -7524,7 +7524,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     prolems?: ProblemOrderByRelationAggregateInput
     submissions?: SubmissionOrderByRelationAggregateInput
-    solvedBy?: problemSolvedOrderByRelationAggregateInput
+    problemSolved?: problemSolvedOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -7541,7 +7541,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"User"> | Date | string
     prolems?: ProblemListRelationFilter
     submissions?: SubmissionListRelationFilter
-    solvedBy?: ProblemSolvedListRelationFilter
+    problemSolved?: ProblemSolvedListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -7593,7 +7593,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Problem"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     submissions?: SubmissionListRelationFilter
-    solvedproblems?: ProblemSolvedListRelationFilter
+    solvedBy?: ProblemSolvedListRelationFilter
   }
 
   export type ProblemOrderByWithRelationInput = {
@@ -7614,7 +7614,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     user?: UserOrderByWithRelationInput
     submissions?: SubmissionOrderByRelationAggregateInput
-    solvedproblems?: problemSolvedOrderByRelationAggregateInput
+    solvedBy?: problemSolvedOrderByRelationAggregateInput
   }
 
   export type ProblemWhereUniqueInput = Prisma.AtLeast<{
@@ -7638,7 +7638,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Problem"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     submissions?: SubmissionListRelationFilter
-    solvedproblems?: ProblemSolvedListRelationFilter
+    solvedBy?: ProblemSolvedListRelationFilter
   }, "id">
 
   export type ProblemOrderByWithAggregationInput = {
@@ -7956,7 +7956,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     prolems?: ProblemCreateNestedManyWithoutUserInput
     submissions?: SubmissionCreateNestedManyWithoutUserInput
-    solvedBy?: problemSolvedCreateNestedManyWithoutUserInput
+    problemSolved?: problemSolvedCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -7970,7 +7970,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     prolems?: ProblemUncheckedCreateNestedManyWithoutUserInput
     submissions?: SubmissionUncheckedCreateNestedManyWithoutUserInput
-    solvedBy?: problemSolvedUncheckedCreateNestedManyWithoutUserInput
+    problemSolved?: problemSolvedUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -7984,7 +7984,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     prolems?: ProblemUpdateManyWithoutUserNestedInput
     submissions?: SubmissionUpdateManyWithoutUserNestedInput
-    solvedBy?: problemSolvedUpdateManyWithoutUserNestedInput
+    problemSolved?: problemSolvedUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -7998,7 +7998,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     prolems?: ProblemUncheckedUpdateManyWithoutUserNestedInput
     submissions?: SubmissionUncheckedUpdateManyWithoutUserNestedInput
-    solvedBy?: problemSolvedUncheckedUpdateManyWithoutUserNestedInput
+    problemSolved?: problemSolvedUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -8051,7 +8051,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     user: UserCreateNestedOneWithoutProlemsInput
     submissions?: SubmissionCreateNestedManyWithoutProblemInput
-    solvedproblems?: problemSolvedCreateNestedManyWithoutProblemInput
+    solvedBy?: problemSolvedCreateNestedManyWithoutProblemInput
   }
 
   export type ProblemUncheckedCreateInput = {
@@ -8071,7 +8071,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     submissions?: SubmissionUncheckedCreateNestedManyWithoutProblemInput
-    solvedproblems?: problemSolvedUncheckedCreateNestedManyWithoutProblemInput
+    solvedBy?: problemSolvedUncheckedCreateNestedManyWithoutProblemInput
   }
 
   export type ProblemUpdateInput = {
@@ -8091,7 +8091,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutProlemsNestedInput
     submissions?: SubmissionUpdateManyWithoutProblemNestedInput
-    solvedproblems?: problemSolvedUpdateManyWithoutProblemNestedInput
+    solvedBy?: problemSolvedUpdateManyWithoutProblemNestedInput
   }
 
   export type ProblemUncheckedUpdateInput = {
@@ -8111,7 +8111,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     submissions?: SubmissionUncheckedUpdateManyWithoutProblemNestedInput
-    solvedproblems?: problemSolvedUncheckedUpdateManyWithoutProblemNestedInput
+    solvedBy?: problemSolvedUncheckedUpdateManyWithoutProblemNestedInput
   }
 
   export type ProblemCreateManyInput = {
@@ -8403,8 +8403,8 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    user: UserCreateNestedOneWithoutSolvedByInput
-    problem: ProblemCreateNestedOneWithoutSolvedproblemsInput
+    user: UserCreateNestedOneWithoutProblemSolvedInput
+    problem: ProblemCreateNestedOneWithoutSolvedByInput
   }
 
   export type problemSolvedUncheckedCreateInput = {
@@ -8419,8 +8419,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutSolvedByNestedInput
-    problem?: ProblemUpdateOneRequiredWithoutSolvedproblemsNestedInput
+    user?: UserUpdateOneRequiredWithoutProblemSolvedNestedInput
+    problem?: ProblemUpdateOneRequiredWithoutSolvedByNestedInput
   }
 
   export type problemSolvedUncheckedUpdateInput = {
@@ -9295,32 +9295,32 @@ export namespace Prisma {
     update?: XOR<XOR<SubmissionUpdateToOneWithWhereWithoutTestCaseInput, SubmissionUpdateWithoutTestCaseInput>, SubmissionUncheckedUpdateWithoutTestCaseInput>
   }
 
-  export type UserCreateNestedOneWithoutSolvedByInput = {
-    create?: XOR<UserCreateWithoutSolvedByInput, UserUncheckedCreateWithoutSolvedByInput>
-    connectOrCreate?: UserCreateOrConnectWithoutSolvedByInput
+  export type UserCreateNestedOneWithoutProblemSolvedInput = {
+    create?: XOR<UserCreateWithoutProblemSolvedInput, UserUncheckedCreateWithoutProblemSolvedInput>
+    connectOrCreate?: UserCreateOrConnectWithoutProblemSolvedInput
     connect?: UserWhereUniqueInput
   }
 
-  export type ProblemCreateNestedOneWithoutSolvedproblemsInput = {
-    create?: XOR<ProblemCreateWithoutSolvedproblemsInput, ProblemUncheckedCreateWithoutSolvedproblemsInput>
-    connectOrCreate?: ProblemCreateOrConnectWithoutSolvedproblemsInput
+  export type ProblemCreateNestedOneWithoutSolvedByInput = {
+    create?: XOR<ProblemCreateWithoutSolvedByInput, ProblemUncheckedCreateWithoutSolvedByInput>
+    connectOrCreate?: ProblemCreateOrConnectWithoutSolvedByInput
     connect?: ProblemWhereUniqueInput
   }
 
-  export type UserUpdateOneRequiredWithoutSolvedByNestedInput = {
-    create?: XOR<UserCreateWithoutSolvedByInput, UserUncheckedCreateWithoutSolvedByInput>
-    connectOrCreate?: UserCreateOrConnectWithoutSolvedByInput
-    upsert?: UserUpsertWithoutSolvedByInput
+  export type UserUpdateOneRequiredWithoutProblemSolvedNestedInput = {
+    create?: XOR<UserCreateWithoutProblemSolvedInput, UserUncheckedCreateWithoutProblemSolvedInput>
+    connectOrCreate?: UserCreateOrConnectWithoutProblemSolvedInput
+    upsert?: UserUpsertWithoutProblemSolvedInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutSolvedByInput, UserUpdateWithoutSolvedByInput>, UserUncheckedUpdateWithoutSolvedByInput>
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProblemSolvedInput, UserUpdateWithoutProblemSolvedInput>, UserUncheckedUpdateWithoutProblemSolvedInput>
   }
 
-  export type ProblemUpdateOneRequiredWithoutSolvedproblemsNestedInput = {
-    create?: XOR<ProblemCreateWithoutSolvedproblemsInput, ProblemUncheckedCreateWithoutSolvedproblemsInput>
-    connectOrCreate?: ProblemCreateOrConnectWithoutSolvedproblemsInput
-    upsert?: ProblemUpsertWithoutSolvedproblemsInput
+  export type ProblemUpdateOneRequiredWithoutSolvedByNestedInput = {
+    create?: XOR<ProblemCreateWithoutSolvedByInput, ProblemUncheckedCreateWithoutSolvedByInput>
+    connectOrCreate?: ProblemCreateOrConnectWithoutSolvedByInput
+    upsert?: ProblemUpsertWithoutSolvedByInput
     connect?: ProblemWhereUniqueInput
-    update?: XOR<XOR<ProblemUpdateToOneWithWhereWithoutSolvedproblemsInput, ProblemUpdateWithoutSolvedproblemsInput>, ProblemUncheckedUpdateWithoutSolvedproblemsInput>
+    update?: XOR<XOR<ProblemUpdateToOneWithWhereWithoutSolvedByInput, ProblemUpdateWithoutSolvedByInput>, ProblemUncheckedUpdateWithoutSolvedByInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -9545,7 +9545,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     submissions?: SubmissionCreateNestedManyWithoutProblemInput
-    solvedproblems?: problemSolvedCreateNestedManyWithoutProblemInput
+    solvedBy?: problemSolvedCreateNestedManyWithoutProblemInput
   }
 
   export type ProblemUncheckedCreateWithoutUserInput = {
@@ -9564,7 +9564,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     submissions?: SubmissionUncheckedCreateNestedManyWithoutProblemInput
-    solvedproblems?: problemSolvedUncheckedCreateNestedManyWithoutProblemInput
+    solvedBy?: problemSolvedUncheckedCreateNestedManyWithoutProblemInput
   }
 
   export type ProblemCreateOrConnectWithoutUserInput = {
@@ -9625,7 +9625,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    problem: ProblemCreateNestedOneWithoutSolvedproblemsInput
+    problem: ProblemCreateNestedOneWithoutSolvedByInput
   }
 
   export type problemSolvedUncheckedCreateWithoutUserInput = {
@@ -9755,7 +9755,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     submissions?: SubmissionCreateNestedManyWithoutUserInput
-    solvedBy?: problemSolvedCreateNestedManyWithoutUserInput
+    problemSolved?: problemSolvedCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutProlemsInput = {
@@ -9768,7 +9768,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     submissions?: SubmissionUncheckedCreateNestedManyWithoutUserInput
-    solvedBy?: problemSolvedUncheckedCreateNestedManyWithoutUserInput
+    problemSolved?: problemSolvedUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutProlemsInput = {
@@ -9824,7 +9824,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    user: UserCreateNestedOneWithoutSolvedByInput
+    user: UserCreateNestedOneWithoutProblemSolvedInput
   }
 
   export type problemSolvedUncheckedCreateWithoutProblemInput = {
@@ -9865,7 +9865,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     submissions?: SubmissionUpdateManyWithoutUserNestedInput
-    solvedBy?: problemSolvedUpdateManyWithoutUserNestedInput
+    problemSolved?: problemSolvedUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutProlemsInput = {
@@ -9878,7 +9878,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     submissions?: SubmissionUncheckedUpdateManyWithoutUserNestedInput
-    solvedBy?: problemSolvedUncheckedUpdateManyWithoutUserNestedInput
+    problemSolved?: problemSolvedUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type SubmissionUpsertWithWhereUniqueWithoutProblemInput = {
@@ -9923,7 +9923,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     prolems?: ProblemCreateNestedManyWithoutUserInput
-    solvedBy?: problemSolvedCreateNestedManyWithoutUserInput
+    problemSolved?: problemSolvedCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSubmissionsInput = {
@@ -9936,7 +9936,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     prolems?: ProblemUncheckedCreateNestedManyWithoutUserInput
-    solvedBy?: problemSolvedUncheckedCreateNestedManyWithoutUserInput
+    problemSolved?: problemSolvedUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSubmissionsInput = {
@@ -9960,7 +9960,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     user: UserCreateNestedOneWithoutProlemsInput
-    solvedproblems?: problemSolvedCreateNestedManyWithoutProblemInput
+    solvedBy?: problemSolvedCreateNestedManyWithoutProblemInput
   }
 
   export type ProblemUncheckedCreateWithoutSubmissionsInput = {
@@ -9979,7 +9979,7 @@ export namespace Prisma {
     referenceSolutions: JsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     updatedAt?: Date | string
-    solvedproblems?: problemSolvedUncheckedCreateNestedManyWithoutProblemInput
+    solvedBy?: problemSolvedUncheckedCreateNestedManyWithoutProblemInput
   }
 
   export type ProblemCreateOrConnectWithoutSubmissionsInput = {
@@ -10048,7 +10048,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     prolems?: ProblemUpdateManyWithoutUserNestedInput
-    solvedBy?: problemSolvedUpdateManyWithoutUserNestedInput
+    problemSolved?: problemSolvedUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSubmissionsInput = {
@@ -10061,7 +10061,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     prolems?: ProblemUncheckedUpdateManyWithoutUserNestedInput
-    solvedBy?: problemSolvedUncheckedUpdateManyWithoutUserNestedInput
+    problemSolved?: problemSolvedUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type ProblemUpsertWithoutSubmissionsInput = {
@@ -10091,7 +10091,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutProlemsNestedInput
-    solvedproblems?: problemSolvedUpdateManyWithoutProblemNestedInput
+    solvedBy?: problemSolvedUpdateManyWithoutProblemNestedInput
   }
 
   export type ProblemUncheckedUpdateWithoutSubmissionsInput = {
@@ -10110,7 +10110,7 @@ export namespace Prisma {
     referenceSolutions?: JsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    solvedproblems?: problemSolvedUncheckedUpdateManyWithoutProblemNestedInput
+    solvedBy?: problemSolvedUncheckedUpdateManyWithoutProblemNestedInput
   }
 
   export type TestCaseResultUpsertWithWhereUniqueWithoutSubmissionInput = {
@@ -10232,7 +10232,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UserCreateWithoutSolvedByInput = {
+  export type UserCreateWithoutProblemSolvedInput = {
     id?: string
     name?: string | null
     email: string
@@ -10245,7 +10245,7 @@ export namespace Prisma {
     submissions?: SubmissionCreateNestedManyWithoutUserInput
   }
 
-  export type UserUncheckedCreateWithoutSolvedByInput = {
+  export type UserUncheckedCreateWithoutProblemSolvedInput = {
     id?: string
     name?: string | null
     email: string
@@ -10258,12 +10258,12 @@ export namespace Prisma {
     submissions?: SubmissionUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type UserCreateOrConnectWithoutSolvedByInput = {
+  export type UserCreateOrConnectWithoutProblemSolvedInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutSolvedByInput, UserUncheckedCreateWithoutSolvedByInput>
+    create: XOR<UserCreateWithoutProblemSolvedInput, UserUncheckedCreateWithoutProblemSolvedInput>
   }
 
-  export type ProblemCreateWithoutSolvedproblemsInput = {
+  export type ProblemCreateWithoutSolvedByInput = {
     id?: string
     title: string
     description: string
@@ -10282,7 +10282,7 @@ export namespace Prisma {
     submissions?: SubmissionCreateNestedManyWithoutProblemInput
   }
 
-  export type ProblemUncheckedCreateWithoutSolvedproblemsInput = {
+  export type ProblemUncheckedCreateWithoutSolvedByInput = {
     id?: string
     title: string
     description: string
@@ -10301,23 +10301,23 @@ export namespace Prisma {
     submissions?: SubmissionUncheckedCreateNestedManyWithoutProblemInput
   }
 
-  export type ProblemCreateOrConnectWithoutSolvedproblemsInput = {
+  export type ProblemCreateOrConnectWithoutSolvedByInput = {
     where: ProblemWhereUniqueInput
-    create: XOR<ProblemCreateWithoutSolvedproblemsInput, ProblemUncheckedCreateWithoutSolvedproblemsInput>
+    create: XOR<ProblemCreateWithoutSolvedByInput, ProblemUncheckedCreateWithoutSolvedByInput>
   }
 
-  export type UserUpsertWithoutSolvedByInput = {
-    update: XOR<UserUpdateWithoutSolvedByInput, UserUncheckedUpdateWithoutSolvedByInput>
-    create: XOR<UserCreateWithoutSolvedByInput, UserUncheckedCreateWithoutSolvedByInput>
+  export type UserUpsertWithoutProblemSolvedInput = {
+    update: XOR<UserUpdateWithoutProblemSolvedInput, UserUncheckedUpdateWithoutProblemSolvedInput>
+    create: XOR<UserCreateWithoutProblemSolvedInput, UserUncheckedCreateWithoutProblemSolvedInput>
     where?: UserWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutSolvedByInput = {
+  export type UserUpdateToOneWithWhereWithoutProblemSolvedInput = {
     where?: UserWhereInput
-    data: XOR<UserUpdateWithoutSolvedByInput, UserUncheckedUpdateWithoutSolvedByInput>
+    data: XOR<UserUpdateWithoutProblemSolvedInput, UserUncheckedUpdateWithoutProblemSolvedInput>
   }
 
-  export type UserUpdateWithoutSolvedByInput = {
+  export type UserUpdateWithoutProblemSolvedInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
@@ -10330,7 +10330,7 @@ export namespace Prisma {
     submissions?: SubmissionUpdateManyWithoutUserNestedInput
   }
 
-  export type UserUncheckedUpdateWithoutSolvedByInput = {
+  export type UserUncheckedUpdateWithoutProblemSolvedInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
@@ -10343,18 +10343,18 @@ export namespace Prisma {
     submissions?: SubmissionUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type ProblemUpsertWithoutSolvedproblemsInput = {
-    update: XOR<ProblemUpdateWithoutSolvedproblemsInput, ProblemUncheckedUpdateWithoutSolvedproblemsInput>
-    create: XOR<ProblemCreateWithoutSolvedproblemsInput, ProblemUncheckedCreateWithoutSolvedproblemsInput>
+  export type ProblemUpsertWithoutSolvedByInput = {
+    update: XOR<ProblemUpdateWithoutSolvedByInput, ProblemUncheckedUpdateWithoutSolvedByInput>
+    create: XOR<ProblemCreateWithoutSolvedByInput, ProblemUncheckedCreateWithoutSolvedByInput>
     where?: ProblemWhereInput
   }
 
-  export type ProblemUpdateToOneWithWhereWithoutSolvedproblemsInput = {
+  export type ProblemUpdateToOneWithWhereWithoutSolvedByInput = {
     where?: ProblemWhereInput
-    data: XOR<ProblemUpdateWithoutSolvedproblemsInput, ProblemUncheckedUpdateWithoutSolvedproblemsInput>
+    data: XOR<ProblemUpdateWithoutSolvedByInput, ProblemUncheckedUpdateWithoutSolvedByInput>
   }
 
-  export type ProblemUpdateWithoutSolvedproblemsInput = {
+  export type ProblemUpdateWithoutSolvedByInput = {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
@@ -10373,7 +10373,7 @@ export namespace Prisma {
     submissions?: SubmissionUpdateManyWithoutProblemNestedInput
   }
 
-  export type ProblemUncheckedUpdateWithoutSolvedproblemsInput = {
+  export type ProblemUncheckedUpdateWithoutSolvedByInput = {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
@@ -10448,7 +10448,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     submissions?: SubmissionUpdateManyWithoutProblemNestedInput
-    solvedproblems?: problemSolvedUpdateManyWithoutProblemNestedInput
+    solvedBy?: problemSolvedUpdateManyWithoutProblemNestedInput
   }
 
   export type ProblemUncheckedUpdateWithoutUserInput = {
@@ -10467,7 +10467,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     submissions?: SubmissionUncheckedUpdateManyWithoutProblemNestedInput
-    solvedproblems?: problemSolvedUncheckedUpdateManyWithoutProblemNestedInput
+    solvedBy?: problemSolvedUncheckedUpdateManyWithoutProblemNestedInput
   }
 
   export type ProblemUncheckedUpdateManyWithoutUserInput = {
@@ -10541,7 +10541,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    problem?: ProblemUpdateOneRequiredWithoutSolvedproblemsNestedInput
+    problem?: ProblemUpdateOneRequiredWithoutSolvedByNestedInput
   }
 
   export type problemSolvedUncheckedUpdateWithoutUserInput = {
@@ -10635,7 +10635,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutSolvedByNestedInput
+    user?: UserUpdateOneRequiredWithoutProblemSolvedNestedInput
   }
 
   export type problemSolvedUncheckedUpdateWithoutProblemInput = {

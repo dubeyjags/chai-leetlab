@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 import cookieParser from "cookie-parser"
 import authRoutes from "./routes/auth.routes.js";
 import problemRoutes from "./routes/problem.routes.js";
-import executionRoutes from "./routes/execution.routes.js";
+import executionRoutes from "./routes/executeCode.routes.js";
 
 dotenv.config()
 const PORT = process.env.PORT || 8080;
