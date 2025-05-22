@@ -98,3 +98,16 @@ npm i jsonwebtoken
 npm i cookie-parser
 
 
+Frontend
+vite(bundler)
+Reactjs
+daisyui (daisyui.com) (vite bundler)
+tailwind css
+zustand (for state management)
+zod for form vlidation 
+react-hook-form for form vlidation
+
+npm i  @hookform/resolvers
+npm i lucide-react (for icons)
+npm i axios (for get the backend request)
+npm i react-hot-toast (for toast messages)
